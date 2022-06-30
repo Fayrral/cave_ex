@@ -15,7 +15,7 @@ if answer == "yes":
         if answer == 'sneak':
             print("You tried to sneak around the campsite but stepped in a bear trap. With no help in sight, you succumbed to your injury. The End")
 
-        elif answer == 'approach':
+        else:
             print("You approached the campsite and found it to be abandoned. You've searched the tent and found a small flask")
  
             take_kerosene = input("The flask you've located is full, but you're not sure of what. Do you steal it or leave it?: (steal/leave) ") == 'steal'
@@ -23,7 +23,7 @@ if answer == "yes":
             if take_kerosene:
                 print("You place the flask in your pocket for later and continue down the trail.")
                 
-            elif not take_kerosene:
+            else:
                 print("You leave the flask behind and continue down the trail.")
                 
             answer = input("You've come upon a large mine shaft! Beside the mine shaft, there is a cabin. Do you wish to search the cabin or\n\
@@ -32,30 +32,30 @@ if answer == "yes":
             if answer == 'mine':
                 print("You enter the mine shaft and fall to your death. The End.")
 
-            elif answer == 'cabin':
+            else:
                 print("You enter the cabin and find a corpse.")
 
                 search_cabin = input("Do you continue to search the cabin despite the corpse?: (yes/no) ") == 'yes'
 
-                if not search_cabin:
-                    print("You leave the cabin and enter the mine shaft where you fall to your death. The End.") 
-
-                elif search_cabin:
+                if search_cabin:
                     print("You have located a large length of rope and a headlamp. You used the rope to climb down into the mine.")
+
+                else:
+                    print("You leave the cabin and enter the mine shaft where you fall to your death. The End.") 
 
                     answer = input("You reach the bottom of your rope and are now in the mine shaft. You turn your light on and see two paths ahead.\n\
                     do you climb down the ladder on the right or continue straight to the left?: (ladder/straight) ").lower().strip()
             
-                    if answer == ('ladder'):
+                    if answer == 'ladder':
                         print("You attempt to climb down the ladder, but half way down the wood becomes rotten. The ladder breaks and you fall to your death. The End.")
                     
-                    elif answer == ('straight'):
+                    else:
                         print("You avoid the ladder and continue down the path.")
 
                         answer = input("As you continue down the path, you see the glimmer of a lantern shinning off the wet rock walls of the cave.\n\
                         do you continue down the path with your headlamp on or off?: (on/off) ").lower().strip()
                             
-                        if answer == ('off'):
+                        if answer == 'off':
                             print("You sneak up on a chamber containing a large sleeping Ogre. He appears to be guarding a ladder to go deeper into the cave.")
 
                             answer = input("Do you sneak passed the Ogre to the ladder he is guarding or fight him?: (sneak/fight) ").lower().strip()
@@ -72,7 +72,7 @@ if answer == "yes":
                                 if search_ogre:
                                     print("You locate a journal and place it in your pocket. You continue down the path to a locked door.")
 
-                                elif not search_ogre:
+                                else:
                                     print("You do not search the Ogre from fear of waking him. You continue down the path to a locked door.")
 
                                 answer = input("You inspect the door and see a combination style lock. Do you try and open it or return to search the Ogre\n\
@@ -82,17 +82,17 @@ if answer == "yes":
                                     print("You have found a combination in the journal you located while searching the Ogre. You try it on the door and it works!\n\
                                     You have found the hidden gold! YOU WIN, thanks for playing :)")
 
-                                elif answer == ('return'):
+                                elif answer == 'return':
                                     print("You return to the Ogre but are unable to locate him, he is no longer laying on the ground.\n\
                                         The ladder you took into the cave has been demolished.")
                     
                                     answer = input("You are trapped. Do you want to return to the door and try a random combination?: (yes/no) ").lower().strip()
 
-                                    if answer == ('yes'):
+                                    if answer == 'yes':
                                         print("You attempt a random combination on the door. The door is booby trapped and you are impaled by large spikes from the ceiling.\n\
                                         The End.")
 
-                                    elif answer == ('no'):
+                                    elif answer == 'no':
                                         print("You are trapped and starve to death. You spend the remainder of your days praying you're not devoured by the Ogre.\n\
                                         he End.")
                                 elif answer == ('open') and not search_ogre:
@@ -102,15 +102,15 @@ if answer == "yes":
                             elif answer == ('fight') and not take_kerosene:
                                 print("You charge valiantly towards the Ogre but are empty handed. Unfortunately the Ogre is much stronger than you and bashes you with a club. The End.")
 
-                            elif answer == ('sneak'):
+                            else:
                                 print("The Ogre heard you attempting to sneak and bashed you with his club. The End.")
 
-                        elif answer == ('on'):
+                        else:
                             print("An Ogre charges you and clubs you to death. The End.")
 
-    elif answer == 'left':
+    else:
         print("You continue walking the path and choose to go left. The path is so dark you can't see more than three feet ahead you hear the sound of coyote's not far away searching for their next meal.\n\
         Unfortunately, that meal is you. The End.")
 
-elif answer == 'no':
+else:
     print("You must be fun at parties!")
