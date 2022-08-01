@@ -1,7 +1,4 @@
-mf = ('myfile.txt')
-
-fhand = open(mf)
-
-for lin in fhand:
-    # lin = lin.rstrip()
-    print(lin)
+with open('myfile.txt', 'r') as mf:
+    lines = mf.readlines()
+    for l in lines:
+        print(l)
